@@ -1,4 +1,11 @@
 <template>
+    <template>
+  <div class="clock">
+    <span class="date">{{ currentDate }}</span>
+    <span class="time">{{ currentTime }}</span>
+  </div>
+</template>
+
     <div>
       <h1>{{ greeting }}</h1>
       <h2>{{ time }}</h2>
@@ -20,4 +27,5 @@
     },
   };
   </script>
+  
   
