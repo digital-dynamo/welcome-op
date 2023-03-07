@@ -1,13 +1,12 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col text-center" style="font-size:50px;font-weight:bold;">
-<!-- <i class="fa-solid fa-at fa-4x" style="color:black;"></i> -->
-<!-- <WelcomeToOpportunity msg="Welcome to Opportunity"/> -->
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center" style="font-size:50px;font-weight:bold;">
+          <MultiWordClock />
+        </div>
       </div>
     </div>
-  </div>
-
   
     <div class="container">
       <ul>   
@@ -15,39 +14,48 @@
           <span class=""><WelcomeToOpportunity msg="Welcome to Opportunity"/></span>
         </li>
       </ul>
-      <!-- <EventComponent /> --><event-component></event-component>
+      <event-component></event-component>
     </div>
-
-  <footer>
-    <div class="footer-wrapper">
-      <div class="footer-item">
-        <img src="./assets/STZH_SEB_Logo.png" alt="Image 1">
-      </div>
-      <div class="footer-item">
-        <img src="./assets/Opportunity.png" alt="Image 2">
-      </div>
-      <div class="footer-item"> 
-        <img src="./assets/SAG_Logo_De.png" alt="Image 3">
-      </div>
-    </div>
-  </footer>
-
+  </div>
 </template>
 
 <script>
 import WelcomeToOpportunity from './components//WelcomeToOpportunity.vue'
+import MultiWordClock from './components/MultiWordClock.vue'
 import EventComponent from './components/EventComponent.vue';
-/* import EventFilter from "@/components/EventFilter.vue"; */
+
 export default {
   name: 'App',
   components: {
     WelcomeToOpportunity,
+    MultiWordClock,
     EventComponent,
-    /* EventFilter, */
-  }
- 
-}
+  },
+  data() {
+    return {
+      currentDate: '',
+    };
+  },
+  methods: {
+    updateCurrentDate() {
+      let current = new Date();
+      this.currentDate = `${current.getDate()}.${current.getMonth()+1}.${current.getFullYear()}`;
+    },
+    refreshData() {
+      this.updateCurrentDate();
+    },
+  },
+  mounted() {
+    this.refreshData();
+    setInterval(this.refreshData, 1800000);
+  },
+};
 </script>
+
+<style>
+/* Add your styles here */
+</style>
+
 
 <style>
 #app {
