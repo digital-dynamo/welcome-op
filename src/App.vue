@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col text-center" style="font-size:50px;font-weight:bold;">
 <!-- <i class="fa-solid fa-at fa-4x" style="color:black;"></i> -->
-        <img alt="Vue logo" src="./assets/Opportunity.png">
 <!-- <WelcomeToOpportunity msg="Welcome to Opportunity"/> -->
       </div>
     </div>
