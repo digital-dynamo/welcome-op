@@ -14,7 +14,7 @@
 </template>
 
 <script>
-/* WelcomeOpportunity.vue ln 28 -32
+/* WelcomeOpportunity.vue ln 28 -32 das
   data() {
     return {
       events: [],
