@@ -5,7 +5,6 @@
         <img alt="Vue logo" src="./assets/logo.png" style="width:10%; items-align:center;">@
 <!-- <i class="fa-solid fa-at fa-4x" style="color:black;"></i> -->
         <img alt="Vue logo" src="./assets/Opportunity.png">
-<!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 <!-- <WelcomeToOpportunity msg="Welcome to Opportunity"/> -->
       </div>
     </div>
@@ -34,14 +33,13 @@
               </span></div>
       </div>
     </div> -->
-
     <div class="container">
       <ul>   
         <li>
           <span class=""><WelcomeToOpportunity msg="Welcome today to Opportunity"/></span>
         </li>
       </ul>
-        <event-component></event-component>
+      <!-- <EventComponent /> --><event-component></event-component>
     </div>
 
   <footer>
@@ -52,7 +50,7 @@
       <div class="footer-item">
         <img src="./assets/Opportunity.png" alt="Image 2">
       </div>
-      <div class="footer-item">
+      <div class="footer-item"> 
         <img src="./assets/SAG_Logo_De.png" alt="Image 3">
       </div>
     </div>
@@ -61,16 +59,15 @@
 </template>
 
 <script>
-/* import HelloWorld from './components/HelloWorld.vue' */
 import WelcomeToOpportunity from './components//WelcomeToOpportunity.vue'
 import EventComponent from './components/EventComponent.vue';
-
+/* import EventFilter from "@/components/EventFilter.vue"; */
 export default {
   name: 'App',
   components: {
-    /* HelloWorld, */
     WelcomeToOpportunity,
-    EventComponent
+    EventComponent,
+    /* EventFilter, */
   }
  
 }
@@ -83,20 +80,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-
 body {
  
   margin-bottom:25vh;
 }
-
 /* .infoBoxBs {
   background-color: #0F05A0;
   padding-left:25px;
-
 } */
-
 footer {
   background-color:white;
   padding: 20px;
@@ -104,7 +95,6 @@ footer {
   bottom: 0;
   z-index: 1;
 }
-
 .footer-wrapper {
   display: flex;
   justify-content: space-between;
@@ -112,17 +102,14 @@ footer {
   max-width: 100%;
   margin: 0 auto;
 }
-
 .footer-item {
   flex-basis: calc(33.33% - 10px);
   text-align: center;
 }
-
 .footer-item img {
   max-width: 100%;
  
 }
-
 ul {
   list-style: none;
 }

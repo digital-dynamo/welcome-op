@@ -69,7 +69,7 @@ export default {
   mounted() {
     axios
       .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vTWMQ1bHW9tkX0eeaIJOw-4fphuRuqwh8KvAoTpPut1JC72CZuaFSnUJEA7cgeNaEDI51YRdOW3V50D/pub?output=csv'
+        'https://docs.google.com/spreadsheets/d/1KoGSTl0p6TNeII7GkB7FTqK2_ujpN5ALLxa7N7ePgTE/edit?usp=sharing'
       )
       .then((response) => {
         const data = response.data.trim().split('\n').slice(1).map((line) => {
