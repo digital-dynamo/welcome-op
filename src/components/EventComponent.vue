@@ -43,7 +43,7 @@ export default {
     fetchData() {
       axios
         .get(
-          'https://docs.google.com/spreadsheets/d/1KoGSTl0p6TNeII7GkB7FTqK2_ujpN5ALLxa7N7ePgTE/edit?usp=sharing'
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtedpdobvMaK5tGM2fUqJON-l2Btu5bL6vLxkXCgGWYjZzLaUsAEDZfvEH9PNEWJ2WI-2BKb-M4jC/pub?output=csv'
         )
         .then((response) => {
           const data = response.data
