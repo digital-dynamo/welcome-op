@@ -8,33 +8,11 @@
     </div>
   </div>
 
-  <!-- <div class="container">
-      <div class="row justify-content-evenly">
-        <div><WelcomeToOpportunity msg="Welcome to Opportunity"/></div>
-        <div class="col-12 m-3 infoBoxBs">
-          <span class="m-3">
-              <li class="list-group-item li-time">{{ currentdate }}19:30 Uhr</li>
-              <li class="list-group-item li-topic">{{ title }}Besuch</li>
-              <li class="list-group-item li-info">{{ info }}Interessierte können uns gerne für den zweiten Kurs besuchen</li>
-              </span></div>
-        <div class="col-12 m-3 infoBoxBs">
-          <span class="m-3">
-              <li class="list-group-item li-time">{{ currentdate }}19:30 Uhr</li>
-              <li class="list-group-item li-topic">{{ title }}Besuch</li>
-              <li class="list-group-item li-info">{{ info }}Interessierte können uns gerne für den zweiten Kurs besuchen</li>
-              </span></div>
-        <div class="col-12 m-3 infoBoxBs">
-          <span class="m-3">
-              <li class="list-group-item li-time">{{ currentdate }}19:30 Uhr</li>
-              <li class="list-group-item li-topic">{{ title }}Besuch</li>
-              <li class="list-group-item li-info">{{ info }}Interessierte können uns gerne für den zweiten Kurs besuchen</li>
-              </span></div>
-      </div>
-    </div> -->
+  
     <div class="container">
       <ul>   
         <li>
-          <span class=""><WelcomeToOpportunity msg="Welcome today to Opportunity"/></span>
+          <span class=""><WelcomeToOpportunity msg="Welcome to Opportunity"/></span>
         </li>
       </ul>
       <!-- <EventComponent /> --><event-component></event-component>
