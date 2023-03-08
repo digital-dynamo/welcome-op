@@ -6,21 +6,30 @@
           <MultiWordClock />
         </div>
       </div>
+      <div class="row">
+        <div class="col text-align" style="font-size:10px;font-weight:bold;">
+          <WelcomeToOpportunity msg="Welcome to Opportunity"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center" style="font-size:20px;">
+          <span>{{ currentDate }}</span>
+        </div>
+      </div>
     </div>
   
     <div class="container">
       <ul>   
         <li>
-          <span class=""><WelcomeToOpportunity msg="Welcome to Opportunity"/></span>
+          <event-component></event-component>
         </li>
       </ul>
-      <event-component></event-component>
     </div>
   </div>
 </template>
 
 <script>
-import WelcomeToOpportunity from './components//WelcomeToOpportunity.vue'
+import WelcomeToOpportunity from './components/WelcomeToOpportunity.vue'
 import MultiWordClock from './components/MultiWordClock.vue'
 import EventComponent from './components/EventComponent.vue';
 
@@ -41,9 +50,8 @@ export default {
       let current = new Date();
       this.currentDate = `${current.getDate()}.${current.getMonth()+1}.${current.getFullYear()}`;
     },
-    refreshData() {
-      this.updateCurrentDate();
-    },
+    
+    
   },
   mounted() {
     this.refreshData();
@@ -53,48 +61,58 @@ export default {
 </script>
 
 <style>
-/* Add your styles here */
-</style>
-
-
-<style>
 #app {
   font-family: "Inter", Helvetica, Arial, sans-serif;
-  /* font-family: 'Inter', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  min-height: 100vh;
 }
-body {
- 
-  margin-bottom:25vh;
-}
-/* .infoBoxBs {
-  background-color: #0F05A0;
-  padding-left:25px;
-} */
-footer {
-  background-color:white;
-  padding: 20px;
-  position:fixed;
-  bottom: 0;
-  z-index: 1;
-}
-.footer-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
+.container {
+  max-width: 95%;
   margin: 0 auto;
 }
-.footer-item {
-  flex-basis: calc(33.33% - 10px);
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .col {
+    flex-basis: 50%;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .col {
+    flex-basis: 33.33%;
+  }
+}
+.text-center {
   text-align: center;
 }
-.footer-item img {
-  max-width: 100%;
- 
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 </style>
