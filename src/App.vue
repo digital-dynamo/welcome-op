@@ -43,6 +43,7 @@ export default {
   data() {
     return {
       currentDate: '',
+      events: [], // initialize events array
     };
   },
   methods: {
@@ -50,16 +51,26 @@ export default {
       let current = new Date();
       this.currentDate = `${current.getDate()}.${current.getMonth()+1}.${current.getFullYear()}`;
     },
-    
-    
+    refreshEvents() {
+      // fetch events from server and update events array
+      fetch('/api/events')
+        .then(response => response.json())
+        .then(data => {
+          this.events = data;
+        })
+        .catch(error => console.error(error));
+    },
   },
   mounted() {
-    this.refreshData();
-    setInterval(this.refreshData, 1800000);
+    this.updateCurrentDate();
+    setInterval(this.updateCurrentDate, 60000);
+    this.refreshEvents(); // initial fetch of events
+    setInterval(this.refreshEvents, 300000); // refresh events every 5 minutes
   },
 };
 </script>
 
+<!--some styliiin baab-->
 <style>
 #app {
   font-family: "Inter", Helvetica, Arial, sans-serif;
